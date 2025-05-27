@@ -1,0 +1,1076 @@
+/* Här nollställer jag och sätter grundstilar */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: url("../img/bg.jpg") center/cover no-repeat fixed;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* Här gör jag navigeringen snygg och tydlig */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin: 1.5rem 0 2.5rem 0;
+}
+
+nav a {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  transition: color 0.2s, text-shadow 0.2s;
+  text-shadow: 0 0 6px #b892ff, 0 0 12px #fff;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: linear-gradient(90deg, #b892ff 0%, #00fff0 100%);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: #00fff0;
+  text-shadow: 0 0 10px #00fff0, 0 0 20px #b892ff;
+}
+
+/* Här stylar jag huvudinnehållet */
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Här stylar jag hjältebilden */
+main img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+/* Här gör jag sidfoten enkel och tydlig */
+footer {
+  background: none;
+  color: #333;
+  padding: 1.5rem 0 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  border-top: none;
+  box-shadow: none;
+}
+
+.site-banner {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.site-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  filter: drop-shadow(0 0 6px #c87bff) drop-shadow(0 0 10px #a76aff);
+  animation: title-glow 2s ease-in-out infinite alternate;
+}
+
+.site-subtitle {
+  margin-top: 0.5rem;
+  font-family: "Brush Script MT", cursive, sans-serif;
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 8px #b892ff, 0 0 16px #fff, 0 0 2px #b892ff;
+  filter: drop-shadow(0 0 6px #fff) drop-shadow(0 0 12px #b892ff);
+  font-style: italic;
+  letter-spacing: 1px;
+  text-transform: none;
+}
+
+@keyframes title-glow {
+  0% {
+    filter: drop-shadow(0 0 6px #c87bff);
+  }
+  100% {
+    filter: drop-shadow(0 0 12px #ff77ff);
+  }
+}
+
+@keyframes subtitle-flicker {
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+.branding {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.site-logo {
+  display: block;
+  margin: 2rem auto 1rem auto;
+  max-height: 160px;
+  height: auto;
+  filter: drop-shadow(0 0 6px #ff80ff) drop-shadow(0 0 12px #00ffff)
+    drop-shadow(0 0 18px #39ff14);
+  animation: logoPulse 4s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px #ff80ff) drop-shadow(0 0 12px #00ffff)
+      drop-shadow(0 0 18px #39ff14);
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 10px #ff00ff) drop-shadow(0 0 16px #00ffea)
+      drop-shadow(0 0 25px #39ff14);
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px #ff80ff) drop-shadow(0 0 12px #00ffff)
+      drop-shadow(0 0 18px #39ff14);
+  }
+}
+
+.content-container {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 3rem auto;
+  position: relative;
+  z-index: 1;
+}
+
+.content-container::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(
+    90deg,
+    #ff00ff,
+    #00ffff,
+    #00ff00,
+    #ffff00,
+    #ff0000,
+    #ff00ff
+  );
+  background-size: 600% 600%;
+  z-index: -1;
+  border-radius: 18px;
+  filter: blur(3px);
+  animation: borderFlow 8s linear infinite;
+}
+
+@keyframes borderFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.section-heading {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ff66cc;
+}
+
+.about-content {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #222;
+}
+
+.about-content strong {
+  color: #ff66cc;
+  font-weight: 700;
+}
+
+.about-content em {
+  color: #00ccff;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.event-image {
+  width: 100%;
+  max-width: 300px;
+  margin: 1rem 0;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Här stylar jag hjältesektionen */
+.hero-title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #111;
+  font-weight: 700;
+}
+
+.hero-title span {
+  color: #b892ff;
+  text-shadow: 0 0 5px #fff, 0 0 15px #b892ff;
+}
+
+.hero-intro {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin: 0 auto 1rem auto;
+  max-width: 720px;
+  text-align: center;
+}
+
+.hero-image {
+  display: block;
+  margin: 2rem auto 0 auto;
+  max-width: 600px;
+  border-radius: 14px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
+}
+
+.hero-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(186, 146, 255, 0.6);
+}
+
+/* Här stylar jag eventsidan */
+.events-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #b892ff;
+  text-shadow: 0 0 10px #fff, 0 0 18px #b892ff;
+}
+
+.event-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  line-height: 1;
+  font-family: "Segoe UI Emoji", "Segoe UI Symbol", "Apple Color Emoji",
+    "Noto Color Emoji", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  filter: drop-shadow(0 0 2px rgba(186, 146, 255, 0.3));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.event-emoji span,
+.event-emoji i {
+  font-style: normal;
+  font-family: inherit;
+}
+
+.event-block:hover .event-emoji {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 4px rgba(186, 146, 255, 0.5));
+}
+
+.event-block {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.event-description {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.75rem;
+  color: #222;
+}
+
+.event-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.event-image:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 25px rgba(186, 146, 255, 0.6);
+}
+
+/* Här stylar jag om-sidan */
+/* About Page Styles */
+.about-title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #b892ff;
+  text-shadow: 0 0 10px #fff, 0 0 18px #b892ff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.about-text {
+  font-size: 1.125rem;
+  line-height: 1.85rem;
+  max-width: 800px;
+  margin: 0 auto 1.5rem auto;
+  color: #222;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-section {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(186, 146, 255, 0.2);
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 1.5rem;
+  color: #b892ff;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 8px #fff, 0 0 15px #b892ff;
+}
+
+.contact-text {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #222;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.contact-link:hover {
+  color: #b892ff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(186, 146, 255, 0.3);
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+  .contact-info {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* CTA Section */
+.cta-section {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: #b892ff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(186, 146, 255, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(186, 146, 255, 0.6);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  border: 2px solid #b892ff;
+  color: #b892ff;
+}
+
+.cta-button.secondary:hover {
+  background: rgba(186, 146, 255, 0.1);
+}
+
+/* Section Styles */
+.section-title {
+  text-align: center;
+  font-size: 2.4rem;
+  color: white;
+  text-shadow: 0 0 8px #b892ff, 0 0 16px #000;
+  margin-bottom: 1.5rem;
+}
+
+.section-intro {
+  text-align: center;
+  color: #444;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Event Cards */
+.event-cards {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Event Buttons with Emoji Support */
+.event-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.event-button {
+  background: #222;
+  border: 2px solid #b892ff;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(186, 146, 255, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.event-button:hover {
+  background-color: #b892ff;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(186, 146, 255, 0.6);
+}
+
+/* Ensure emojis in buttons are properly sized */
+.event-button {
+  font-size: 1.1rem;
+}
+
+.event-button:first-child {
+  font-size: 1.2rem; /* Slightly larger for the DJ emoji */
+}
+
+/* Här stylar jag stad-sektionen */
+#city-section {
+  width: 100vw;
+  padding: 4rem 1rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.55));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  margin: 0;
+  border-top: none;
+  border-bottom: none;
+  text-align: center;
+  box-shadow: 0 -30px 60px -20px rgba(186, 146, 255, 0.15) inset,
+    0 10px 40px -10px rgba(0, 0, 0, 0.18);
+  margin-bottom: 0;
+}
+
+#city-section .section-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 0 16px #b892ff;
+}
+
+#city-section .section-intro {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.city-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.city {
+  background: #fff;
+  color: #111;
+  padding: 0.8rem 1.6rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  min-width: 120px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(186, 146, 255, 0.2);
+}
+
+.city:hover {
+  background: #b892ff;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 18px #b892ff;
+}
+
+/* Här gör jag rubriken för upplevelser extra tydlig */
+#experiences h2 {
+  font-size: 2.4rem;
+  font-weight: 900;
+  text-shadow: 0 0 8px #b892ff;
+  margin-bottom: 2rem;
+}
+
+/* Här stylar jag "Bli en del av rörelsen"-sektionen */
+.join-section {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 1.2rem;
+  margin-top: 3rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.join-section .section-title {
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 900;
+  text-shadow: 0 0 16px #b892ff;
+}
+
+.join-section .section-intro {
+  color: #f1f1f1;
+  font-size: 1.2rem;
+  margin: 1.5rem 0 2.5rem;
+  text-shadow: 0 0 10px #000;
+}
+
+.join-button {
+  background: linear-gradient(to right, #ff79c6, #b892ff);
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0 0 18px #b892ff;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.join-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 28px #b892ff;
+}
+
+/* Booking CTA Section */
+.cta-booking {
+  margin: 3rem auto 4rem auto;
+  padding: 2.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(186, 146, 255, 0.1),
+    rgba(255, 255, 255, 0.8)
+  );
+  border: 2px solid #b892ff;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 750px;
+  box-shadow: 0 0 20px rgba(186, 146, 255, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.cta-booking:hover {
+  box-shadow: 0 0 30px rgba(186, 146, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-title {
+  font-size: 1.5rem;
+  color: #b892ff;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 5px #fff, 0 0 10px #b892ff;
+}
+
+.cta-subtitle {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.cta-button {
+  background: linear-gradient(45deg, #b892ff, #ff80ff);
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(186, 146, 255, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cta-button:hover {
+  background: linear-gradient(45deg, #ff80ff, #b892ff);
+  box-shadow: 0 0 25px rgba(186, 146, 255, 0.6);
+  transform: scale(1.05);
+}
+
+.button-icon {
+  font-size: 1.2rem;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 0 30px rgba(186, 146, 255, 0.3);
+  animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close-modal {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-modal:hover {
+  color: #b892ff;
+}
+
+.modal-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.modal-header h3 {
+  color: #b892ff;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-body {
+  margin-bottom: 1.5rem;
+}
+
+.calendar-placeholder {
+  background: #f5f5f5;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.booking-info {
+  text-align: left;
+  padding: 1rem;
+  background: rgba(186, 146, 255, 0.1);
+  border-radius: 12px;
+}
+
+.booking-info p {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modal-footer {
+  text-align: center;
+}
+
+.modal-button {
+  background: linear-gradient(45deg, #b892ff, #ff80ff);
+  border: none;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(186, 146, 255, 0.3);
+}
+
+.modal-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(186, 146, 255, 0.5);
+}
+
+/* Success Message Styles */
+.success-message {
+  text-align: center;
+  padding: 2rem;
+}
+
+.success-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.success-message h3 {
+  color: #b892ff;
+  margin-bottom: 1rem;
+}
+
+.success-message p {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .cta-booking {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .wide-invite {
+    padding: 2.5rem 0.5rem;
+  }
+  .invite-title {
+    font-size: 1.5rem;
+  }
+  .invite-description {
+    font-size: 1rem;
+  }
+  .invite-button {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Här gör jag en bred, inbjudande sektion inspirerad av Summer Dance */
+.wide-invite {
+  width: 100%;
+  padding: 5rem 1rem;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.4) 10%,
+    rgba(186, 146, 255, 0.1)
+  );
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  text-align: center;
+  color: #fff;
+  margin-top: 4rem;
+  animation: fadeInUp 1s ease;
+  box-shadow: 0 30px 60px -20px rgba(186, 146, 255, 0.15) inset,
+    0 -10px 40px -10px rgba(0, 0, 0, 0.18);
+  margin-top: 0;
+}
+
+.invite-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.invite-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 12px #b892ff, 0 0 24px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.6rem;
+}
+
+.invite-description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #f2f2f2;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+  margin-bottom: 2.8rem;
+}
+
+.invite-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 40px;
+  background: linear-gradient(45deg, #ff79c6, #b892ff);
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 15px rgba(186, 146, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.invite-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #b892ff, #ff79c6);
+  box-shadow: 0 0 25px rgba(186, 146, 255, 0.6);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.city-section,
+.wide-invite {
+  z-index: 1;
+}
+
+.city-section::before,
+.city-section::after,
+.wide-invite::before,
+.wide-invite::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.city-section::before,
+.wide-invite::before {
+  top: -6rem;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+  filter: blur(20px);
+}
+
+.city-section::after,
+.wide-invite::after {
+  bottom: -6rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  filter: blur(20px);
+  animation: pulseGlow 8s ease-in-out infinite alternate;
+}
+@keyframes pulseGlow {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.event-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.event-button {
+  background-color: white;
+  color: #111;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji",
+    sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.event-button:hover {
+  background: linear-gradient(45deg, #ff79c6, #b892ff);
+  color: white;
+  transform: scale(1.06);
+}
+
+/* Restore original event button style */
+.event-btn {
+  background: #222;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 2rem;
+  margin: 0.5rem;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 10px #b892ff33;
+  transition: box-shadow 0.2s, background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.event-btn:hover,
+.event-btn:focus {
+  background: #b892ff;
+  color: #fff;
+  box-shadow: 0 0 18px #b892ff, 0 0 8px #000;
+  transform: scale(1.06);
+}
+
+/* Remove broken/conflicting styles */
+.event-button-row,
+.event-button {
+  all: unset;
+}

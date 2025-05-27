@@ -1,0 +1,27 @@
+{
+  "Deploy": {
+    "Project": {
+      "Name": "pamelas optimistic sloth",
+      "Alias": "pamelas-optimistic-sloth",
+      "Id": "4d1e8d3d-fd87-4226-84f7-8a31a55d0812",
+      "TrialExpireDate": "2025-05-26T08:04:28.0000000",
+      "Workspaces": [
+        {
+          "Id": "166686cc-d1e8-49cb-bac0-278a25565d56",
+          "Name": "Live",
+          "Type": "live",
+          "Url": "https://pamelas-optimistic-sloth.euwest01.umbraco.io"
+        }
+      ]
+    },
+    "Settings": {
+      "ApiKey": "B80E7C17366C07F98AB35E2DAEE1871B9ED4AD3E"
+    }
+  },
+  "Identity": {
+    "ClientId": "0297c0f6-83ad-4481-9ae2-07a3f5475333",
+    "ClientSecret": "Q5~T526ixOHlj47lg7Mu7_.zN1fK.7ua.9",
+    "EnvironmentId": "166686cc-d1e8-49cb-bac0-278a25565d56",
+    "LocalLoginRedirectUri": "https://redirect.identity.umbraco.com"
+  }
+}

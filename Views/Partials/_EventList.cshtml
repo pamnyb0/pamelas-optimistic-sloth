@@ -1,0 +1,43 @@
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    // Simulated Umbraco content nodes
+    var mockEvents = new[]
+    {
+        new {
+            title = "DJ-set i industrilokal",
+            description = "En oförglömlig kväll med beats och bas i en urban industrimiljö! Här möts elektronisk musik med råa väggar och industriell atmosfär för en upplevelse som vibrerar i själen.",
+            emojiLabel = "🎧"
+        },
+        new {
+            title = "Kreativ manusförfattarverkstad",
+            description = "I ett rum fyllt av kreativ energi och inspirerande själar väntar en magisk resa in i berättandets värld. Här får ord liv och tankar förvandlas till berättelser som rör och engagerar.",
+            emojiLabel = "🎭"
+        },
+        new {
+            title = "Hackathon med zombietema",
+            description = "I skuggan av en digital apokalyps samlas kodare och kreatörer för att överleva och skapa. Vårt zombietemade hackathon är en intensiv resa där teknik möter kreativitet.",
+            emojiLabel = "👾"
+        }
+    };
+}
+
+<div class="content-container">
+    <h2 class="events-title">Eventidéer från vår community</h2>
+
+    <div class="event-buttons">
+        @foreach (var evt in mockEvents)
+        {
+            <label class="event-button">@Html.Raw(evt.emojiLabel) @evt.title</label>
+        }
+    </div>
+
+    @foreach (var evt in mockEvents)
+    {
+        <div class="event-block">
+            <div class="event-emoji">@Html.Raw(evt.emojiLabel)</div>
+            <h2 class="event-title">@evt.title</h2>
+            <p class="event-description">@Html.Raw(evt.description)</p>
+        </div>
+    }
+</div> 

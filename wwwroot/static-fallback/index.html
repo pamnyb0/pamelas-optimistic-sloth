@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EventfulThinking</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .section-title {
+        font-size: 2.2rem;
+        color: #fff;
+        text-shadow: 0 0 12px #b892ff, 0 0 24px #000;
+        margin-bottom: 1.2rem;
+        letter-spacing: 1px;
+      }
+
+      .experience-tags .tag {
+        background: #fff;
+        color: #b892ff;
+        font-weight: 700;
+        border-radius: 2rem;
+        padding: 0.8rem 1.6rem;
+        margin: 0.5rem;
+        font-size: 1.1rem;
+        box-shadow: 0 0 10px #b892ff33;
+        transition: transform 0.2s, box-shadow 0.2s;
+        display: inline-block;
+        cursor: pointer;
+      }
+      .experience-tags .tag:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 18px #b892ff;
+        background: #b892ff;
+        color: #fff;
+      }
+
+      .city-section {
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.65) 80%,
+          rgba(186, 146, 255, 0.08)
+        );
+        /* Här har jag mina befintliga stilar */
+      }
+
+      .join-button {
+        /* ...existing styles... */
+        box-shadow: 0 0 18px #b892ff, 0 0 8px #000;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .join-button:hover,
+      .join-button:focus {
+        transform: scale(1.08);
+        box-shadow: 0 0 28px #b892ff, 0 0 12px #000;
+        background: linear-gradient(45deg, #b892ff, #ff79c6);
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-banner">
+      <img src="img/logo.png" alt="EventfulThinking Logo" class="site-logo" />
+      <h1 class="site-title">EVENTFULTHINKING</h1>
+      <p class="site-subtitle">där idéer blir event</p>
+    </header>
+    <nav>
+      <a href="index.html">Hem</a>
+      <a href="events.html">Eventförslag</a>
+      <a href="about.html">Om oss</a>
+    </nav>
+
+    <div class="content-container">
+      <h2 class="hero-title">
+        Välkommen till <span>EventfulThinking</span><br />
+        Där idéer får liv
+      </h2>
+
+      <p class="hero-intro">
+        Bär du på en idé som förtjänar att bli verklighet? Hos EventfulThinking
+        får drömmar vingar. Här möts kreativa själar för att dela, skapa och
+        inspirera varandra. Oavsett om du vill ordna en synthpopkväll, starta
+        ett datascience-forum eller bjuda in till en magisk rollspelsnatt – här
+        finns plats för din vision.
+      </p>
+
+      <p class="hero-intro">
+        Vi samlar idéer, lyfter fram de mest efterfrågade och kopplar ihop
+        engagerade medskapare. Tillsammans bygger vi en ny sorts community där
+        varje röst räknas och varje dröm kan bli verklighet.
+      </p>
+
+      <img
+        src="img/hero.jpg"
+        alt="Publik på ett event, glad stämning"
+        class="hero-image"
+      />
+
+      <div class="cta-section">
+        <a href="events.html" class="cta-button">Utforska eventförslag</a>
+        <a href="about.html" class="cta-button secondary">Läs mer om oss</a>
+      </div>
+    </div>
+
+    <!-- Här börjar jag med eventtyper-sektionen -->
+    <section id="experiences" class="event-cards">
+      <h2 class="section-title">Vad vill du uppleva?</h2>
+      <div class="card-grid">
+        <button class="event-btn">🎵 Konsert med favoritbandet</button>
+        <button class="event-btn">🧠 Workshop i kreativt skrivande</button>
+        <button class="event-btn">👾 Rollspelskväll med zombietema</button>
+        <button class="event-btn">📱 App-utvecklarkonvent</button>
+        <button class="event-btn">📊 Datascience brainstorm</button>
+        <button class="event-btn">🎧 DJ-set i industrilokal</button>
+        <button class="event-btn">🎨 Konstinstallation med VR</button>
+        <button class="event-btn">🎭 Improvisationsteater</button>
+      </div>
+    </section>
+
+    <!-- Här börjar jag med plats-sektionen -->
+    <section id="city-section" class="city-section">
+      <h2 class="section-title">Var kan detta hända?</h2>
+      <p class="section-intro">
+        Från norr till söder – vi skapar möten där de behövs som mest.
+      </p>
+      <div class="city-grid">
+        <div class="city">Stockholm</div>
+        <div class="city">Göteborg</div>
+        <div class="city">Malmö</div>
+        <div class="city">Uppsala</div>
+        <div class="city">Örebro</div>
+        <div class="city">Lund</div>
+        <div class="city">Västerås</div>
+        <div class="city">Jönköping</div>
+      </div>
+    </section>
+
+    <div class="section-glow-bridge" aria-hidden="true"></div>
+
+    <!-- Här börjar jag med inbjudningssektionen -->
+    <section class="wide-invite">
+      <div class="invite-content">
+        <h2 class="invite-title">Dela din idé med oss</h2>
+        <p class="invite-description">
+          Bär du på en vision, en tanke eller ett drömevent? Vi vill lyssna på
+          dig.<br />
+          Kanske drömmer du om en intim konsert under stjärnorna, en interaktiv
+          framtidsmässa eller ett episkt rollspel i ett slott. Eller så har du
+          något helt nytt i tankarna.<br /><br />
+          Låt oss utforska din idé tillsammans och skapa något oförglömligt.
+          Tillsammans formar vi framtidens mötesplatser.
+        </p>
+        <button class="invite-button" tabindex="0" aria-label="Kontakta oss">
+          Kontakta oss
+        </button>
+      </div>
+    </section>
+
+    <!-- Här börjar jag med bokningssektionen -->
+    <section class="cta-booking">
+      <div class="cta-content">
+        <h3 class="cta-title">Osäker på om din idé passar in?</h3>
+        <p class="cta-subtitle">
+          Hör av dig! Vi erbjuder kostnadsfria inspirationssamtal där du kan
+          bolla din idé och få guidning.
+        </p>
+        <button class="cta-button" onclick="openBookingModal()">
+          <span class="button-icon">🎧</span>
+          Boka ett samtal
+        </button>
+      </div>
+    </section>
+
+    <!-- Här börjar jag med bokningsmodalen -->
+    <div id="bookingModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeBookingModal()">&times;</span>
+        <div class="modal-header">
+          <h3>Boka inspirationssamtal</h3>
+          <p>Välj ett datum och tid som passar dig</p>
+        </div>
+        <div class="modal-body">
+          <div class="calendar-placeholder">
+            <div class="calendar-icon">📅</div>
+            <p>Kalender kommer snart</p>
+          </div>
+          <div class="booking-info">
+            <p>🎧 30 minuters samtal via Zoom</p>
+            <p>💡 Kostnadsfritt och utan förpliktelser</p>
+            <p>✨ Få feedback och vägledning</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="modal-button" onclick="simulateBooking()">
+            Bekräfta bokning
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer>© 2025 EventfulThinking</footer>
+
+    <script>
+      function openBookingModal() {
+        document.getElementById("bookingModal").style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeBookingModal() {
+        document.getElementById("bookingModal").style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      function simulateBooking() {
+        const modal = document.getElementById("bookingModal");
+        modal.innerHTML = `
+          <div class="modal-content success">
+            <div class="success-message">
+              <span class="success-icon">✨</span>
+              <h3>Tack för din bokning!</h3>
+              <p>Vi har skickat en bekräftelse till din e-post.</p>
+              <p>Vi ser fram emot att prata med dig!</p>
+              <button class="modal-button" onclick="closeBookingModal()">
+                Stäng
+              </button>
+            </div>
+          </div>
+        `;
+      }
+
+      // Jag stänger modalen om jag klickar utanför
+      window.onclick = function (event) {
+        const modal = document.getElementById("bookingModal");
+        if (event.target == modal) {
+          closeBookingModal();
+        }
+      };
+    </script>
+  </body>
+</html>
